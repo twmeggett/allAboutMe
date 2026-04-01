@@ -79,6 +79,8 @@ export default defineConfig([
 
       // Prettier formatting
       "prettier/prettier": "error",
+
+      "comma-dangle": ["error", "always-multiline"]
     },
   },
 ]);
