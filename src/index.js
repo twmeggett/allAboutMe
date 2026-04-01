@@ -10,4 +10,3 @@ root.render(
     <App />
   </Provider>,
 );
-root.render(<App />);

@@ -2,15 +2,15 @@ import { render, screen } from "@testing-library/react";
 
 import "@testing-library/jest-dom";
 
-import { Test } from "./Test";
+import { Foo } from "./Foo";
 
 test("loads and displays greeting", async () => {
   // ARRANGE
-  render(<Test />);
+  render(<Foo />);
 
   // ACT
   const heading = await screen.findByRole("heading");
 
   // ASSERT
-  expect(heading).toHaveTextContent("Test");
+  expect(heading).toHaveTextContent("Foo");
 });

@@ -8,6 +8,8 @@ const parentFolder = process.argv[2];
 const componentName = process.argv[3];
 const validNameRegex = /^[A-Z][A-Za-z0-9]*$/;
 
+type TemplateSuffix = "tsx" | "module.scss" | "test.tsx" | "ts";
+
 if (!componentName) {
   console.error("Please provide a component name as an argument.");
   process.exit(1);
@@ -57,7 +59,8 @@ ejs.renderFile(
 const renderFromTemplate = (
   componentName: string,
   template: `${string}.ejs`,
-  suffix: string,
+  suffix: TemplateSuffix,
+  fileName: string = componentName,
 ): void => {
   ejs.renderFile(
     path.resolve("templates", `${template}`),
@@ -67,10 +70,7 @@ const renderFromTemplate = (
         console.error(`Error rendering ${template}: ${err}`);
         process.exit(1);
       }
-      fs.writeFileSync(
-        path.join(componentDir, `${componentName}.${suffix}`),
-        str,
-      );
+      fs.writeFileSync(path.join(componentDir, `${fileName}.${suffix}`), str);
     },
   );
 };
@@ -78,6 +78,7 @@ const renderFromTemplate = (
 renderFromTemplate(componentName, "component.ejs", "tsx");
 renderFromTemplate(componentName, "component.module.ejs", "module.scss");
 renderFromTemplate(componentName, "component.test.ejs", "test.tsx");
+renderFromTemplate(componentName, "component.index.ejs", "ts", "index");
 
 /*
 if (parentFolder === 'pages') {

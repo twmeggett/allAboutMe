@@ -98,6 +98,7 @@ module.exports = {
       "@Pages": path.resolve(__dirname, "src/pages/"), // Alias for pages directory
       "@Layouts": path.resolve(__dirname, "src/layouts/"), // Alias for layouts directory
       "@Hooks": path.resolve(__dirname, "src/hooks/"), // Alias for hooks directory
+      "@Store": path.resolve(__dirname, "src/store"), // Alias for store directory
     },
   },
 };
