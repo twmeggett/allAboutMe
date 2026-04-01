@@ -1,0 +1,16 @@
+import { render, screen } from "@testing-library/react";
+
+import "@testing-library/jest-dom";
+
+import { <%= componentName %> } from "./<%= componentName %>";
+
+test("loads and displays greeting", async () => {
+  // ARRANGE
+  render(<<%= componentName %> />);
+
+  // ACT
+  const heading = await screen.findByRole("heading");
+
+  // ASSERT
+  expect(heading).toHaveTextContent("<%= componentName %>");
+});
