@@ -23,7 +23,7 @@ module.exports = {
     hot: true,
     compress: true,
     port: 8080,
-    open: false,
+    open: true,
     historyApiFallback: true, // For React Router support
   },
   plugins: [
@@ -74,10 +74,6 @@ module.exports = {
         use: [
           {
             loader: "babel-loader",
-            options: {
-              sourceType: "unambiguous", // Automatically detects ESM vs CJS
-              presets: ["@babel/preset-env", "@babel/preset-react"],
-            },
           },
         ],
       },
