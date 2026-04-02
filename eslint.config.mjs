@@ -80,7 +80,8 @@ export default defineConfig([
       // Prettier formatting
       "prettier/prettier": "error",
 
-      "comma-dangle": ["error", "always-multiline"]
+      "comma-dangle": ["error", "always-multiline"],
+      "no-require-imports": "off",
     },
   },
 ]);

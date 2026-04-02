@@ -2,11 +2,11 @@ const fs = require("fs");
 const path = require("path");
 const babel = require("@babel/core");
 const ejs = require("ejs");
+const { validNameRegex } = require("./utilites");
 
 const folders = ["components", "pages", "layouts"];
 const parentFolder = process.argv[2];
 const componentName = process.argv[3];
-const validNameRegex = /^[A-Z][A-Za-z0-9]*$/;
 
 type TemplateSuffix = "tsx" | "module.scss" | "test.tsx" | "ts";
 
